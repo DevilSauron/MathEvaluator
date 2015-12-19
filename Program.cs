@@ -14,13 +14,13 @@ namespace MathEvaluator
         {
             try
             {
-                string test = "2 * 5 * (-(10 + 10 - 10 * 5)) / (8 - 4 - 5 * 7)";
+                string test = "-(1 + 2 * 3) + (-2 * (3 + 3))";
                 Lexer lexer = new Lexer(test);
                 TokenStream stream = lexer.Tokenize();
                 Parser parser = new Parser(stream);
                 Tree<int> tree = parser.Parse();
 
-                Console.WriteLine(String.Format("Input: {0}\nResult: {1}", test, tree.Walk()));
+                Console.WriteLine(String.Format("Input: {0}\nResult: {1}\n\nDOT notation:\n\n{2}", test, tree.Walk(), tree.GetDot()));
             }
             catch (Exception ex)
             {

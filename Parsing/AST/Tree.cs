@@ -19,5 +19,13 @@ namespace MathEvaluator.Parsing.AST
         {
             return top.Evaluate();
         }
+
+        public string GetDot()
+        {
+            string ret = "digraph {\n";
+            ret += top.SubTreeDot();
+            ret += "\n}";
+            return ret;
+        }
     }
 }

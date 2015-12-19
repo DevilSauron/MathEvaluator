@@ -9,5 +9,7 @@ namespace MathEvaluator.Parsing.AST
     public interface IAstNode<T>
     {
         T Evaluate();
+        string SubTreeDot();
+        string GetGuid();
     }
 }
